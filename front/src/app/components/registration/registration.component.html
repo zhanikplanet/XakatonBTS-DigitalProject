@@ -1,1 +1,111 @@
-<p>registration works!</p>
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+  <div class="w-full flex justify-content-center xl:my-5">
+    <div class="surface-card p-4 shadow-2 border-round w-full lg:w-6">
+      <div class="text-center mb-5">
+        <i class="fa-solid fa-right-left"></i>
+        <div class="text-900 text-3xl font-medium mb-3">Welcome!</div>
+        <span class="text-600 font-medium line-height-3"
+          >Already have an account?</span
+        >
+        <a
+          [routerLink]="['/']"
+          class="font-medium no-underline ml-2 text-blue-500 cursor-pointer"
+          >Sign in!</a
+        >
+      </div>
+
+      <div>
+        <label for="email1" class="block text-900 font-medium mb-2"
+          >Email</label
+        >
+        <input
+          id="email1"
+          type="text"
+          placeholder="Email address"
+          pInputText
+          class="w-full mb-3"
+          formControlName="email"
+        />
+
+        <label for="firstName" class="block text-900 font-medium mb-2"
+          >First Name</label
+        >
+        <input
+          id="firstName"
+          type="text"
+          placeholder="First Name"
+          pInputText
+          class="w-full mb-3"
+          formControlName="firstName"
+        />
+
+        <label for="lastName" class="block text-900 font-medium mb-2"
+          >Last Name</label
+        >
+        <input
+          id="lastName"
+          type="text"
+          placeholder="Last Name"
+          pInputText
+          class="w-full mb-3"
+          formControlName="lastName"
+        />
+
+        <label for="address" class="block text-900 font-medium mb-2"
+          >Address</label
+        >
+        <input
+          id="address"
+          type="text"
+          placeholder="Address"
+          pInputText
+          class="w-full mb-3"
+          formControlName="address"
+        />
+
+        <label for="phoneNumber" class="block text-900 font-medium mb-2"
+          >Phone Number</label
+        >
+        <p-inputMask
+          id="phoneNumber"
+          mask="+9 (999) 999 99 99"
+          placeholder="Phone Number"
+          class="w-full mb-3"
+          formControlName="phoneNumber"
+        ></p-inputMask>
+
+        <label for="password1" class="block text-900 font-medium mb-2"
+          >Password</label
+        >
+        <input
+          id="password1"
+          type="password"
+          placeholder="Password"
+          pInputText
+          class="w-full mb-3"
+          formControlName="password"
+        />
+        <label for="password2" class="block text-900 font-medium mb-2"
+          >Confirm Password</label
+        >
+        <input
+          id="password2"
+          type="password"
+          placeholder="Confirm Password"
+          pInputText
+          class="w-full mb-3"
+          formControlName="confirmPassword"
+        />
+
+        <button
+          pButton
+          pRipple
+          type="submit"
+          label="Sign In"
+          icon="pi pi-user"
+          class="w-full"
+        ></button>
+      </div>
+    </div>
+  </div>
+</form>
