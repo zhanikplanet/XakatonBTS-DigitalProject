@@ -1,0 +1,24 @@
+<form [formGroup]="cardForm" (ngSubmit)="onSubmit()">
+  <div [style]="{ 'margin-bottom': '10px' }">
+    <label for="name">Name</label>
+    <input id="name" type="text" pInputText formControlName="name" />
+  </div>
+  <div [style]="{ 'margin-bottom': '10px' }">
+    <label for="cardNumber">Card Number</label>
+    <p-inputMask
+      mask="9999 9999 9999 9999"
+      formControlName="cardNumber"
+    ></p-inputMask>
+  </div>
+  <div>
+    <label for="expirationDate">Expiration Date</label>
+    <p-calendar formControlName="expirationDate" [showIcon]="true"></p-calendar>
+  </div>
+  <div>
+    <p-divider></p-divider>
+    <div *ngIf="isInvalid" style="color: red">Some fields are incorrect</div>
+    <div style="display: flex; justify-content: end">
+      <p-button label="Apply" icon="pi pi-check" type="submit"></p-button>
+    </div>
+  </div>
+</form>

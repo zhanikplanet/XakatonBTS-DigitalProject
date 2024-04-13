@@ -1,0 +1,14 @@
+<header style="display: flex">
+  <p-selectButton
+    [options]="stateOptions"
+    [(ngModel)]="value"
+    optionLabel="label"
+    optionValue="value"
+    #card
+  ></p-selectButton>
+  <p-button
+    icon="pi pi-plus"
+    [rounded]="true"
+    (onClick)="addNewBank()"
+  ></p-button>
+</header>
